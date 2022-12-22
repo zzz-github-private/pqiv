@@ -4384,8 +4384,10 @@ gboolean window_close_callback(GtkWidget *object, gpointer user_data) {/*{{{*/
 void calculate_base_draw_pos_and_size(int *image_transform_width, int *image_transform_height, int *x, int *y) {/*{{{*/
 	calculate_current_image_transformed_size(image_transform_width, image_transform_height);
 	if(option_scale != NO_SCALING || main_window_in_fullscreen) {
-		*x = (main_window_width - current_scale_level * *image_transform_width) / 2;
-		*y = (main_window_height - current_scale_level * *image_transform_height) / 2;
+		//*x = (main_window_width - current_scale_level * *image_transform_width) / 2;
+		//*y = (main_window_height - current_scale_level * *image_transform_height) / 2;
+        // Upper left corner in a fullscreen mode
+		*x = *y = 0;
 	}
 	else {
 		// When scaling is disabled always use the upper left corder to avoid
