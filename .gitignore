@@ -1,0 +1,9 @@
+# idea
+/.idea/
+# build files
+/config.make
+/pqiv.desktop
+**/*.o
+/backends/initializer-gdkpixbuf.c
+# executable
+pqiv
